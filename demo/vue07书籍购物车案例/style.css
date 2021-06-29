@@ -1,0 +1,20 @@
+table{
+    border: 1px solid;
+    /*border-collapse 属性设置是否将表格边框折叠为单一边框*/
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+th,td{
+    border: 1px solid;
+    /*padding 为内边距距离  两个参数的时候表示上下内边距为8  左右为16*/
+    padding: 8px 16px;
+    /*设置文本的对齐方式 向左*/
+    text-align: left;
+}
+
+th{
+    background-color: #f7f7f7;
+    color: #5c6b77;
+    font-weight: 600;
+}

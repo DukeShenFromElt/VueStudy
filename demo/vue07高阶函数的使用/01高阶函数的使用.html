@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../../js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+  <ul  >
+    过滤结果：
+    <li v-for="item in filterUsage">{{item}}</li>
+  </ul>
+
+  <ul  >
+    乘结果：
+    <li v-for="item in jiecheng">{{item}}</li>
+  </ul>
+
+</div>
+
+<script >
+  const  app=new Vue({
+    el:"#app",
+    data:{
+      list:[1,2,3,4,5]
+    },
+    computed:{
+      filterUsage(){
+        return this.list.filter(function (n) {
+          return n < 3
+        })
+      },
+      jiecheng(){
+        return this.list.map(function (n){
+          return n*2
+        })
+      }
+    }
+  })
+</script>
+
+<script>
+  const  nums=[22,33,44,55,66]
+  let newNums=nums.filter(n=>n>40).map(n=>n*3).reduce((pre,n)=>pre+n)
+  console.log(newNums)
+</script>
+
+
+</body>
+</html>

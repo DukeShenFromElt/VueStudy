@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+  <!--单选-->
+  <!--<label>
+    <select name="abc" v-model="fruit">
+      <option value="apple">苹果</option>
+      <option value="banana">香蕉</option>
+      <option value="tomato">番茄</option>
+    </select>
+  </label>
+  <p>选择的水果:{{fruit}}</p>-->
+
+  <!--多选-->
+  <label>
+    <select v-model="fruit" multiple>
+      <option value="apple">苹果</option>
+      <option value="banana">香蕉</option>
+      <option value="tomato">番茄</option>
+    </select>
+  </label>
+  <p>选择的水果:{{fruit}}</p>
+
+
+  <!--input的值动态绑定  -->
+  <label v-for="item in originFruits" :for="item">
+    <input type="checkbox" :value="item" v-model="fruit" :id="item">{{item}}
+  </label>
+</div>
+<script>
+  let app=new Vue({
+    el:"#app",
+    data:{
+      fruit:[],
+      originFruits:["篮球","足球","乒乓球","台球"]
+    }
+  })
+</script>
+</body>
+</html>
