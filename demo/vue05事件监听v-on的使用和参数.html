@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app"><p>{{count}}</p>
+
+    <button @click="add">+</button>
+     <!-- 多个传参需要获取event事件的时候 $event-->
+     <!-- 如果传入如下abc，会让程序认为是传入了变量，从而去寻找定义的变量-->
+    <button @click="sub(abc,$event)">-</button>
+</div>
+
+<script>
+    const app=new Vue({
+        el:"#app",
+        data:{
+          count: 0
+
+        },
+        methods:{
+            add(event){//当未传值的时候，浏览器默认传递event事件属性
+                this.count++
+                console.log("+++",event)
+            },
+
+            sub(abc,event){
+                this.count--
+                console.log("----",abc,event)
+            }
+        }
+
+    })
+</script>
+</body>
+</html>

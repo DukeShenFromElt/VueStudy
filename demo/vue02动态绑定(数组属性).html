@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    .active{
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<script src="../js/vue.js"></script>
+<div id="app" >
+    <ul>
+        <li  v-on:click="bt(index)" v-bind:class="{active:currentIndex===index}"  v-for="(m,index) in movies">{{index}}-{{m}}</li>
+    </ul>
+</div>
+<script>
+  const app=new Vue({
+    el: "#app",
+    data:{
+      movies:["惊天","海王","娜扎","哪吒"],
+      currentIndex: undefined
+    },
+    methods:{
+      bt: function (index){
+        this.currentIndex=index;
+      }
+    }
+
+  })
+</script>
+
+
+
+</body>
+</html>

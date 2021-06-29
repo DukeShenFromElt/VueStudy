@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <!--<span> 标签被用来组合文档中的行内元素。-->
+    <span v-if="isUser">
+        <!--使用label标签 label 元素不会向用户呈现任何特殊效果。
+        不过，它为鼠标用户改进了可用性。如果您在 label 元素内点击文本，就会触发此控件。
+        就是说，当用户选择该标签时，浏览器就会自动将焦点转到和标签相关的表单控件上。-->
+    <label for="userName">用户输入</label>
+        <!--在input中采用key来进行解决重复问题-->
+        <input type="text" id="userName" placeholder="用户输入" key="username">
+    </span>
+    <span v-else>
+        <label for="email">邮箱输入</label>
+        <input type="text" id="email" placeholder="邮箱输入" key="email">
+    </span>
+    <button @click="isUser=!isUser">切换类型</button>
+</div>
+<script>
+    const app=new Vue({
+        el:"#app",
+        data:{
+            isUser: true
+        }
+    })
+</script>
+</body>
+</html>

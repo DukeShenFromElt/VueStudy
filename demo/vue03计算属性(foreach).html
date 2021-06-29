@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+<div id="app">{{totalPrice}}</div>
+<script>
+  const app=new Vue({
+    el: "#app",
+    data:{
+      books:[
+        {name:"a",price:123},
+        {name:"g",price:123},
+        {name:"b",price:123},
+        {name:"d",price:123}
+      ]
+    },
+    computed:{
+      totalPrice:function (){
+        let result=0
+        let result2=0
+
+       this.books.forEach(function (item,index) {
+         result+=item.price;
+       })
+         let sum= this.books.reduce(function (pre,cur,index,arr) {
+              return pre+cur.price
+
+          },0)
+
+        return sum
+      }
+
+
+
+    }
+
+
+  })
+</script>
+</body>
+</html>

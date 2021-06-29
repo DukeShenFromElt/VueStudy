@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+
+
+<div id="app">
+  <!--v-if的条件是flase的时候，不会创建元素在dom中，适用于一次切换的场景中-->
+  <h1 v-if="isUser" id="aaa">hello</h1>
+  <!--v-show的条件是false的时候，会创建元素在dom中，diplay：none  适用于频繁切换的场景-->
+  <h1 v-show="isUser" id="bbb">hello</h1>
+</div>
+<script>
+
+    const app=new Vue({
+    el:"#app",
+    data:{
+    isUser: true
+  }
+  })
+</script>
+</body>
+</html>

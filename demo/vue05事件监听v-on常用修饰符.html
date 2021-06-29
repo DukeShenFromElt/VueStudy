@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+
+<div id="app" >
+  <!--1. 防止事件冒泡，.stop修饰符-->
+  <div @click="divAdd">
+    <button @click.stop="btAdd">+</button>
+  </div>
+  <!--2.   .prevent修饰符的使用  阻止提交-->
+  <form action="www.baidu.com">
+  <input type="submit" value="提交" @click.prevent="submitClick">
+  </form>
+  <!--3.   .keyup修饰符的使用  监听键盘上按键点击事件-->
+  <input type="text" @keyup.enter="keyup">
+  <!--4.   .onece修饰符的使用  只调用一次-->
+</div>
+<script>
+  const app=new Vue({
+    el:"#app",
+    data:{
+      count:0
+    },
+
+    methods:{
+      divAdd(){
+        console.log("divAdd")
+      },
+      btAdd(){
+        console.log("btAdd");
+      },
+      submitClick(){
+        console.log("submitClick");
+      },
+      keyup(){
+        console.log("keyup");
+      }
+    }
+
+
+
+  })
+</script>
+</body>
+</html>

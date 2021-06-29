@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+     <p>{{message}}</p>
+    <button v-on:click="reverseMessage2">反转</button>
+
+</div>
+<script src="../js/vue.js"></script>
+
+<script>
+  const app =new Vue({
+    el: "#app",
+    data:{
+      message: "你看看"
+    },
+
+    computed:{//计算属性  用 computed
+      reverseMessage: function (){
+        return this.message.split('').reverse().join('')
+      }
+    },
+
+    methods:{//事件属性   用methods
+      reverseMessage2: function (){
+        this.message=this.message.split('').reverse().join('')
+      }
+    }
+  })
+</script>
+</body>
+</html>
